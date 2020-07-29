@@ -90,7 +90,7 @@ class PushWorkBuilder
         if (isset($pushAreas[2])) {
             $this->push->getPushTarget()->setCity($pushAreas[2]);
         }
-        $this->push->getPushTarget()->setTarget(self::TARGET_RIDS);
+        $this->push->getPushTarget()->setTarget(self::TARGET_AREAS);
         return $this;
     }
 

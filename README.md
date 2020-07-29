@@ -56,11 +56,13 @@ $ composer require overtrue/weather:dev-master
  
 # 使用注意事项
 * 初始化appkey、appSecret
-```Java
-   MobPushConfig.appkey = "";
-   MobPushConfig.appSecret = "";
+
+```php
+   $mobPushConfig = new MobPushConfig();
+   $mobPushConfig::$appkey = 'appkey';
+   $mobPushConfig::$appSecret = 'appSecret';
 ```
-以上是使用时设置的方式，还可以直接引用源码在mob.push.api.MobPushConfig设置
+以上是使用时设置的方式，还可以直接引用源码在MobTech\MobPush\Config\MobPushConfig设置
 
 * 错误码请参考 
   [MobPush Api 错误码](http://wiki.mob.com/mobpush-rest-api-接口文档/#map-6)
