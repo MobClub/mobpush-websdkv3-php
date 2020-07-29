@@ -19,5 +19,5 @@ class MobPushConfig
     /**
      * baseUrl: webapi http 接口基础url
      */
-    const baseUrl = "http://10.18.97.47:8082"; // http://api.push.mob.com/
+    const baseUrl = "http://api.push.mob.com/";
 }
