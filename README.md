@@ -48,10 +48,10 @@ $ composer require mob/mobpush -vvv
 
 ```php
 # 配置包路径，注意，这里 `../mobpush-websdkv3-php-master` 为相对路径，不要弄错了
-$ composer config repositories.weather path ../mobpush-websdkv3-php-master    
+$ composer config repositories.mobpush path ../mobpush-websdkv3-php-master    
 
 #安装扩展包
-$ composer require overtrue/weather:dev-master
+$ composer require mob/mobpush:dev-master
 ```
  
 # 使用注意事项
