@@ -57,7 +57,7 @@ class PushV3Client
     {
         $pushWorkBuilder = new PushWorkBuilder();
         return self::pushTaskV3($pushWorkBuilder
-            ->setTargetByAlias($workNo, $title, $content, $rids)
+            ->setTargetRids($workNo, $title, $content, $rids)
             ->builder()
         );
     }
