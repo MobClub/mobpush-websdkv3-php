@@ -14,7 +14,6 @@ abstract class Obj
         $field = preg_match('/^get(\w+)/', $name, $matches);
         if ($field && $matches[1]) {
             $property = lcfirst(ucwords($matches[1]));
-            $property = isset($this->$property) ? $property : strtolower($matches[1]);
             return $this->$property;
         }
 
@@ -22,7 +21,6 @@ abstract class Obj
         $field = preg_match('/^set(\w+)/', $name, $matches);
         if ($field && $matches[1]) {
             $property = lcfirst(ucwords($matches[1]));
-            $property = isset($this->$property) ? $property : strtolower($matches[1]);
             return $this->$property = $args[0];
         }
     }

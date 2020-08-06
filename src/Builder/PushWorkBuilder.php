@@ -36,7 +36,7 @@ class PushWorkBuilder
         if (!$this->push->getPushTarget()) {
             $this->push->setPushTarget();
         }
-        $this->push->setWorkNo($workNo);
+        $this->push->setWorkno($workNo);
         $this->push->getPushNotify()->setTitle($title);
         $this->push->getPushNotify()->setContent($content);
 
