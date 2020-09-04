@@ -99,13 +99,13 @@ class PushWorkBuilder
     {
         $pushMap['key'] = $key;
         $pushMap['value'] = $value;
-        array_push($this->push->getPushNotify()->getExtrasMapList(), $pushMap);
+        $this->push->getPushNotify()->setExtrasMapList($pushMap);
         return $this;
     }
 
     public function setNotifyExtraMap($extraMap)
     {
-        $this->push->getPushNotify()->setExtrasMapList($extraMap);
+        $this->push->getPushNotify()->setExtrasMapList($this->getExtraParamsList($extraMap));
         return $this;
     }
 
@@ -113,13 +113,27 @@ class PushWorkBuilder
     {
         $pushMap['key'] = $key;
         $pushMap['value'] = $value;
-        array_push($this->push->getPushNotify()->getSchemeDataList(), $pushMap);
+        $this->push->getPushForward()->setSchemeDataList($pushMap);
         return $this;
     }
 
     public function setForwardExtraMap($extraMap)
     {
-        $this->push->getPushNotify()->setSchemeDataList($extraMap);
+        $this->push->getPushForward()->setSchemeDataList($this->getExtraParamsList($extraMap));
         return $this;
+    }
+
+    public function getExtraParamsList($extraMap)
+    {
+        $pushMapList = [];
+        if (is_array($extraMap)) {
+            $k = 0;
+            foreach ($extraMap as $key => $value) {
+                $pushMapList[$k]['key'] = $key;
+                $pushMapList[$k]['value'] = $value;
+                $k++;
+            }
+        }
+        return $pushMapList;
     }
 }

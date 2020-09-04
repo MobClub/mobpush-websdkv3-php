@@ -5,6 +5,7 @@ namespace MobTech\MobPush\Model;
 use MobTech\MobPush\Model\Obj;
 use MobTech\MobPush\Model\PushNotify;
 use MobTech\MobPush\Model\PushTarget;
+use MobTech\MobPush\Model\PushForward;
 
 /**
  * An extremely basic class for creating people objects
@@ -41,6 +42,11 @@ class Push extends Obj implements \JsonSerializable
      */
     protected $pushNotify;
 
+    /**
+     * link 相关打开配置
+     */
+    protected $pushForward;
+
     public function getPushNotify()
     {
         if (!$this->pushNotify instanceof PushNotify) {
@@ -55,6 +61,14 @@ class Push extends Obj implements \JsonSerializable
             $this->pushTarget = new PushTarget();
         }
         return $this->pushTarget;
+    }
+
+    public function getPushForward()
+    {
+        if (!$this->pushForward instanceof PushForward) {
+            $this->pushForward = new PushForward();
+        }
+        return $this->pushForward;
     }
 
     public function jsonSerialize()
