@@ -27,6 +27,7 @@ class Curl
         }
         return $resp;
     }
+
     /**
      * @param $url
      * @param $params
@@ -44,6 +45,29 @@ class Curl
             ]);
         }
         return $resp;
+    }
+
+    /**
+     * @param $params
+     * @param $url
+     * @param int $time
+     * @return bool|string
+     */
+    public static function get($url, $params = [], $time = 30)
+    {
+        if (count($params) > 0) {
+            $url .= "?" . http_build_query($params);
+        }
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, MobPushConfig::baseUrl . $url);
+        curl_setopt($curl, CURLOPT_BINARYTRANSFER, true);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_TIMEOUT, $time);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, self::curlHeader(json_encode($params)));
+
+        $response = curl_exec($curl);
+        curl_close($curl);
+        return $response;
     }
 
     /**

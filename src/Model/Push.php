@@ -25,7 +25,7 @@ class Push extends Obj implements \JsonSerializable
     /**
      * 推送任务来源：webapi 、developerPlatform;
      */
-    protected $source = "webapi";
+    protected $source = 'webapi';
 
     /**
      * 推送内容

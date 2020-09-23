@@ -14,6 +14,7 @@ class PushV3Client
     const CANCEL_TASK_URI = '/push/drop';
     const REPLACE_TASK_URI = '/push/replace';
     const RECALL_TASK_URI = '/push/recall';
+    const PUSH_MULTI = '/v3/push/createMulti';
 
     /* 接口推送 */
     public static function pushTaskV3($push)
@@ -102,5 +103,12 @@ class PushV3Client
     public static function getPushByWorkno($workno)
     {
         return Curl::getResult(self::GET_BY_WORK_NO_URI, ['workno' => $workno]);
+    }
+
+    /* 获取推送信息 */
+    public static function pushMulti($pushMulti)
+    {
+        $pushMulti->getPushWork()->setAppkey(MobPushConfig::$appkey);
+        return Curl::post(self::PUSH_MULTI, $pushMulti);
     }
 }
