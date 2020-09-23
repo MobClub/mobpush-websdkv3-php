@@ -96,3 +96,6 @@ $mobPushConfig::$appSecret = 'appSecret';
 /* 根据workId查询统计结果 */ 
 (new StatsV3Client())->getStatsByWorkId('workId');
 ```
+
+* 1.0.4版本相对于1.0.3版本新增了定速推送配置(PushNotify.speed)
+* 2.0.0版本相对于1.0.4版本去掉了updateByAlias,upateByTags无效方法
