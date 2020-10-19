@@ -19,7 +19,8 @@
     * 用户标签推送 pushByTags
     * Registration ID推送 pushByRids
     * 复杂地理位置推送 pushByAreas
-    * 用户自定义配置推送 pushTaskV3         
+    * 用户自定义配置推送 pushTaskV3
+    * 别名和rid批量推送 pushMulti         
 * 推送任务详情查询接口
 	* 查询推送任务详情(根据batchId) getPushByBatchId
 	* 查询推送任务详情(根据workno) getPushByWorkno
@@ -34,6 +35,13 @@
     * 按小时查询统计 getStatsByHour
     * 按日期查询统计 getStatsByDay
     * 根据id查询任务下发给设备的详情统计 getStatsByDevice
+* 设备操作接口
+    * 根据rid查询设备信息接口 getByRid
+    * 查询设备分布情况 getDeviceDistribution
+    * 根据别名查询设备信息 queryByAlias
+    * 更新设备别名 updateAlias (updateByAlias已经废弃)
+    * 更新设备标签 updateTags (upateByTags已经废弃)
+    * 根据标签查询设备信息 queryByTags   
        
 
 # 使用方式
