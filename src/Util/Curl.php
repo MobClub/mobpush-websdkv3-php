@@ -63,7 +63,7 @@ class Curl
         curl_setopt($curl, CURLOPT_BINARYTRANSFER, true);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_TIMEOUT, $time);
-        curl_setopt($curl, CURLOPT_HTTPHEADER, self::curlHeader(json_encode($params)));
+        curl_setopt($curl, CURLOPT_HTTPHEADER, self::curlHeader('');
 
         $response = curl_exec($curl);
         curl_close($curl);
